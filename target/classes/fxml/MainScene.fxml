@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.loginwithdb.MainScreen">
+   <children>
+      <ImageView id="Image" fitHeight="150.0" fitWidth="200.0" layoutX="221.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" styleClass="mainImage" />
+      <JFXButton fx:id="register" layoutX="200.0" layoutY="200.0" onMouseClicked="#changeToRegisterScreen" prefHeight="52.0" prefWidth="216.0" ripplerFill="#ffa751" styleClass="fontSize" stylesheets="@../styles/MainStyles.css" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="AT" size="50" />
+         </graphic></JFXButton>
+      <JFXButton fx:id="login" layoutX="200.0" layoutY="300.0" onMouseClicked="#changeToLoginScreen" prefHeight="45.0" prefWidth="216.0" ripplerFill="#ffa751" styleClass="fontSize" stylesheets="@../styles/MainStyles.css">
+         <graphic>
+            <FontAwesomeIconView glyphName="WORDPRESS" size="50" />
+         </graphic></JFXButton>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/MainStyles.css" />
+      <URL value="@../styles/MainScreenStyles.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="background" />
+      <String fx:value="background-color" />
+   </styleClass>
+</AnchorPane>

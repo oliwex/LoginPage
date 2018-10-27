@@ -1,0 +1,28 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+
+.loginTextboxSize
+{
+    -fx-pref-height: 50px;
+    -fx-pref-width: 200px;
+    -fx-min-height: 50px;
+    -fx-min-width: 200px;
+    -fx-max-height: 50px;
+    -fx-max-width: 200px; 
+
+}
+
+.loginLabel
+{
+    -fx-pref-height: 50px;
+    -fx-pref-width: 100px;
+    -fx-min-height: 50px;
+    -fx-min-width: 100px;
+    -fx-max-height: 50px;
+    -fx-max-width: 100px;
+    -fx-text-alignment: right;
+
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.loginwithdb.AdminPostLoginScreenController">
+   <children>
+      <JFXButton fx:id="logoutButton" layoutX="300.0" layoutY="325.0" onMouseClicked="#logout" stylesheets="@../styles/MainStyles.css" />
+      <TableView fx:id="adminTable" layoutX="25.0" layoutY="23.0" prefHeight="290.0" prefWidth="576.0" styleClass="table" stylesheets="@../styles/AdminPostLoginScreenStyles.css" />
+   </children>
+   <styleClass>
+      <String fx:value="background-color" />
+      <String fx:value="fontSize" />
+      <String fx:value="background" />
+   </styleClass>
+   <stylesheets>
+      <URL value="@../styles/MainStyles.css" />
+      <URL value="@../styles/AdminPostLoginScreenStyles.css" />
+   </stylesheets>
+</AnchorPane>

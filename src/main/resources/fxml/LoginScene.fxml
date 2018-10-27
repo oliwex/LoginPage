@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.loginwithdb.LoginScreen">
+   <children>
+      <FontAwesomeIconView glyphName="LOCK" layoutX="254.0" layoutY="125.0" size="100" wrappingWidth="67.0" />
+      <JFXTextField fx:id="loginField" layoutX="225.0" layoutY="150.0" prefHeight="50.0" prefWidth="200.0">
+         <stylesheets>
+            <URL value="@../styles/MainStyles.css" />
+            <URL value="@../styles/LoginScreenStyles.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="fontSize" />
+            <String fx:value="loginTextboxSize" />
+         </styleClass>
+      </JFXTextField>
+      <JFXPasswordField fx:id="passwordField" layoutX="225.0" layoutY="223.0" prefHeight="50.0" prefWidth="200.0">
+         <stylesheets>
+            <URL value="@../styles/MainStyles.css" />
+            <URL value="@../styles/LoginScreenStyles.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="fontSize" />
+            <String fx:value="loginTextboxSize" />
+         </styleClass>
+      </JFXPasswordField>
+      <Label fx:id="login" layoutX="125.0" layoutY="150.0" text="Label">
+         <stylesheets>
+            <URL value="@../styles/MainStyles.css" />
+            <URL value="@../styles/LoginScreenStyles.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="fontSize" />
+            <String fx:value="loginLabel" />
+         </styleClass>
+      </Label>
+      <Label fx:id="password" layoutX="125.0" layoutY="223.0" text="Label">
+         <stylesheets>
+            <URL value="@../styles/MainStyles.css" />
+            <URL value="@../styles/LoginScreenStyles.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="fontSize" />
+            <String fx:value="loginLabel" />
+         </styleClass>
+      </Label>
+      <JFXButton fx:id="loginButton" layoutX="75.0" layoutY="314.0" onMouseClicked="#logInToAccount" stylesheets="@../styles/MainStyles.css">
+         <graphic>
+            <FontAwesomeIconView glyphName="UNLOCK" size="50" />
+         </graphic>
+         <styleClass>
+            <String fx:value="fontSize" />
+            <String fx:value="button" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton fx:id="backToMainButton" layoutX="325.0" layoutY="314.0" onMouseClicked="#changeToMainScreen" stylesheets="@../styles/MainStyles.css">
+         <graphic>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" size="50" />
+         </graphic>
+         <styleClass>
+            <String fx:value="fontSize" />
+            <String fx:value="button" />
+         </styleClass>
+      </JFXButton>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/LoginScreenStyles.css" />
+      <URL value="@../styles/MainStyles.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="background-color" />
+      <String fx:value="background" />
+   </styleClass>
+</AnchorPane>

@@ -1,0 +1,23 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.registerTextboxSize
+{
+    -fx-pref-height: 50px;
+    -fx-pref-width: 150px;
+    -fx-min-height: 50px;
+    -fx-min-width: 150px;
+    -fx-max-height: 50px;
+    -fx-max-width: 150px; 
+
+}
+.background
+{
+    -fx-pref-height: 600px;
+    -fx-pref-width: 600px;
+    -fx-min-height: 600px;
+    -fx-min-width: 600px;
+    -fx-max-height: 600px;
+    -fx-max-width: 600px; 
+}

@@ -1,0 +1,30 @@
+.button
+{
+    -fx-background-color: #ffe259;
+    jfx-rippler-fill: #ffa751;
+    -fx-background-radius: 50px 50px 50px 50px; 
+    
+    -fx-pref-height: 50px;
+    -fx-pref-width: 200px;
+    -fx-min-height: 50px;
+    -fx-min-width: 200px;
+    -fx-max-height: 50px;
+    -fx-max-width: 200px; 
+}
+.background
+{
+    -fx-pref-height: 400px;
+    -fx-pref-width: 600px;
+    -fx-min-height: 400px;
+    -fx-min-width: 600px;
+    -fx-max-height: 400px;
+    -fx-max-width: 600px; 
+}
+.background-color
+{
+    -fx-background-color: #799F0C;
+}
+.fontSize
+{
+    -fx-font-size: 20;
+}
