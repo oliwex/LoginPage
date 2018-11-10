@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.logging.*;
+
+import com.mycompany.loginwithdb.tablemodels.UserDTO;
 import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,14 +37,14 @@ public class AdminPostLoginScreenController extends SceneSwitcher implements Ini
     private JFXButton logoutButton;
     
     @FXML
-    private TableView<User> adminTable;
+    private TableView<UserDTO> adminTable;
     
-    private final TableColumn<User,String> nameColumn=new TableColumn<>("Name");
-    private final TableColumn<User,String> surnameColumn=new TableColumn<>("Surname");
-    private final TableColumn<User,String> emailColumn=new TableColumn<>("Email");
-    private final TableColumn<User,String> loginColumn=new TableColumn<>("Login");
-    private final TableColumn<User,String> passwordColumn=new TableColumn<>("Password");
-    private final TableColumn<User,String> blockedColumn=new TableColumn<>("Blocked");
+    private final TableColumn<UserDTO,String> nameColumn=new TableColumn<>("Name");
+    private final TableColumn<UserDTO,String> surnameColumn=new TableColumn<>("Surname");
+    private final TableColumn<UserDTO,String> emailColumn=new TableColumn<>("Email");
+    private final TableColumn<UserDTO,String> loginColumn=new TableColumn<>("Login");
+    private final TableColumn<UserDTO,String> passwordColumn=new TableColumn<>("Password");
+    private final TableColumn<UserDTO,String> blockedColumn=new TableColumn<>("Blocked");
     
     
     
@@ -62,18 +64,37 @@ public class AdminPostLoginScreenController extends SceneSwitcher implements Ini
         System.out.println("DATA");
         
         
-        this.nameColumn.setCellValueFactory(new PropertyValueFactory<User,String>("Name"));
-        this.nameColumn.setCellValueFactory(new PropertyValueFactory<User,String>("Surname"));
-        this.nameColumn.setCellValueFactory(new PropertyValueFactory<User,String>("Email"));
-        this.nameColumn.setCellValueFactory(new PropertyValueFactory<User,String>("Login"));
-        this.nameColumn.setCellValueFactory(new PropertyValueFactory<User,String>("Password"));
-        this.nameColumn.setCellValueFactory(new PropertyValueFactory<User,String>("Blocked"));
+        this.nameColumn.setCellValueFactory(new PropertyValueFactory<UserDTO,String>("name"));
+        this.nameColumn.setCellValueFactory(new PropertyValueFactory<UserDTO,String>("surname"));
+        this.nameColumn.setCellValueFactory(new PropertyValueFactory<UserDTO,String>("email"));
+        this.nameColumn.setCellValueFactory(new PropertyValueFactory<UserDTO,String>("login"));
+        this.nameColumn.setCellValueFactory(new PropertyValueFactory<UserDTO,String>("password"));
+        this.nameColumn.setCellValueFactory(new PropertyValueFactory<UserDTO,String>("blocked"));
         
-        this.adminTable.setItems(new LoadDB().getAllUsers());
+        this.adminTable.setItems(convertToDTO(new LoadDB().getAllUsers()));
         
         
         
         System.out.println("Koniec daty");
+    }
+
+    private ObservableList<UserDTO> convertToDTO(ObservableList<User> users) {
+        ObservableList<UserDTO> userDTOS = FXCollections.observableArrayList();
+
+        for (User user : users) {
+            userDTOS.add(
+                    new UserDTO(
+                            user.getUserPrivateData().getName(),
+                            user.getUserPrivateData().getSurname(),
+                            user.getUserPrivateData().getEmail(),
+                            user.getUserLoginData().getLogin(),
+                            user.getUserLoginData().getPassword(),
+                            user.isBlocked()+""
+                    )
+            );
+        }
+
+        return userDTOS;
     }
     
    
