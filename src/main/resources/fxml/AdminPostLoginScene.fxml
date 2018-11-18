@@ -8,8 +8,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.loginwithdb.AdminPostLoginScreenController">
    <children>
-      <JFXButton fx:id="logoutButton" layoutX="300.0" layoutY="325.0" onMouseClicked="#logout" stylesheets="@../styles/MainStyles.css" />
+      <JFXButton fx:id="logoutButton" layoutX="975.0" layoutY="326.0" onMouseClicked="#logout" stylesheets="@../styles/MainStyles.css" />
       <TableView fx:id="adminTable" layoutX="25.0" layoutY="23.0" prefHeight="290.0" prefWidth="576.0" styleClass="table" stylesheets="@../styles/AdminPostLoginScreenStyles.css" />
+      <JFXButton fx:id="blockUserButton" layoutX="246.0" layoutY="326.0" onMouseClicked="#blockUser" stylesheets="@../styles/MainStyles.css" />
+      <JFXButton fx:id="deleteUserButton" layoutX="472.0" layoutY="326.0" onMouseClicked="#deleteUser" stylesheets="@../styles/MainStyles.css" text="Button" />
    </children>
    <styleClass>
       <String fx:value="background-color" />

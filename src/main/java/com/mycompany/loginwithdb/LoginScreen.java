@@ -17,6 +17,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 
@@ -91,7 +93,7 @@ public class LoginScreen extends SceneSwitcher implements Initializable,ClassStr
         else
         {
             
-            if (new AlertDialog("Something goes wrong with data.Enter it once again").getAlertDialog().get() == ButtonType.OK)
+            if (new AlertDialog("Something goes wrong with data.Enter it once again").getAlertDialog(AlertType.ERROR).get() == ButtonType.OK)
             {
                 this.setFieldToNull();
             }

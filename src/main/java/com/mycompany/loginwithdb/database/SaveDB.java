@@ -17,18 +17,6 @@ import org.hibernate.*;
 public class SaveDB extends DBOperation
 {
 
-    @Override
-    protected void closeSession(Session openedSession) 
-    {
-        super.closeSession(openedSession); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    protected Session getOpenedSession() 
-    {
-        return super.getOpenedSession(); //To change body of generated methods, choose Tools | Templates.
-    }
-
     
     public void saveUser(User user) 
     {
@@ -37,7 +25,7 @@ public class SaveDB extends DBOperation
        session.beginTransaction();
        session.save(user);
        
-       this.closeSession(session);
+       super.closeSession(session);
        
     }
 }

@@ -17,17 +17,6 @@ public class EmailChecker extends Checker{
 
     protected String pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$"; //validating email
 
-    @Override
-    protected boolean checkIfMatchesThePattern(String email, String pattern) 
-    {
-        return super.checkIfMatchesThePattern(email, this.pattern); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    protected boolean checkIfEmpty(String email) 
-    {
-        return super.checkIfEmpty(email); //To change body of generated methods, choose Tools | Templates.
-    }
 
     private boolean checkIfRight(String email)
     {
@@ -36,14 +25,24 @@ public class EmailChecker extends Checker{
     
     private boolean checkIfRepeatedInDB(String email)
     {
-    User user=new LoadDB().checkIfEmailExist(email); 
-    return !user.getUserPrivateData().getEmail().equals(email);
+    
+        User user=new LoadDB().checkIfEmailExist(email); //jest pelne gdy email istnieje w bazie
+
+        if (user == null) //jeśli nie istnieje
+        {
+            return true;
+        }
+        else
+        {
+            return false;//!user.getUserPrivateData().getEmail().equals(email);
+        }
+        
     }
 
     @Override
     public boolean checker(String email) 
     {
-      return !this.checkIfEmpty(email) && this.checkIfRight(email) && this.checkIfMatchesThePattern(email,this.pattern) && this.checkIfRepeatedInDB(email);
+        return !super.checkIfEmpty(email) && this.checkIfRight(email) && super.checkIfMatchesThePattern(email, this.pattern) && this.checkIfRepeatedInDB(email);
     }
 
     

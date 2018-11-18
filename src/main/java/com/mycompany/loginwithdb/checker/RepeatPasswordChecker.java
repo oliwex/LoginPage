@@ -24,7 +24,6 @@ public class RepeatPasswordChecker extends Checker
     
     private boolean checkIfFieldsAreTheSame()
     {
-        
         return this.passwordField.equals(this.repeatPasswordField);
     }
     

@@ -1,24 +1,12 @@
 package com.mycompany.loginwithdb.checker;
 
-import com.mycompany.loginwithdb.checker.EmailChecker;
-import com.mycompany.loginwithdb.checker.LoginChecker;
-import com.mycompany.loginwithdb.checker.NameChecker;
-import com.mycompany.loginwithdb.checker.PasswordChecker;
-import com.mycompany.loginwithdb.checker.RepeatPasswordChecker;
-import com.mycompany.loginwithdb.checker.SurnameChecker;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 
 /**
  *
  * @author oliwe
  */
-public class FieldCheckerFacade {
+public class FieldCheckerFacade { //zapisuje dane do bazy jeśli to prawda
     
     private final boolean nameChecker;
     private final boolean surnameChecker;
@@ -37,6 +25,7 @@ public class FieldCheckerFacade {
         this.passwordChecker=new PasswordChecker().checker(password);
         this.repeatPasswordChecker=new RepeatPasswordChecker(password,repeatPassword).checker(repeatPassword);
         
+        System.out.println("SPRAWDZAM: "+this.nameChecker+" "+this.nameChecker+" "+this.surnameChecker+" "+this.emailChecker+" "+this.loginChecker+" "+this.passwordChecker+" "+this.repeatPasswordChecker);
     }
 
     private boolean checkEveryElement()

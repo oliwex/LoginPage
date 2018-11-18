@@ -17,6 +17,7 @@ import java.net.URL;
 import java.util.*;
 import javafx.fxml.*;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 
 
 /**
@@ -92,6 +93,7 @@ public class RegisterScreen extends SceneSwitcher implements Initializable, Clas
             
             
         User u=new User();
+        
         u.setUserLoginData(uld);
         u.setUserPrivateData(upd);
         return u;
@@ -99,7 +101,7 @@ public class RegisterScreen extends SceneSwitcher implements Initializable, Clas
     
     private void setAlertDialog()
     {
-        if (new AlertDialog("Something goes wrong with data.Enter it once again").getAlertDialog().get() == ButtonType.OK)
+        if (new AlertDialog("Something goes wrong with data.Enter it once again").getAlertDialog(AlertType.ERROR).get() == ButtonType.OK)
         {
             this.setFieldToNull();
         }

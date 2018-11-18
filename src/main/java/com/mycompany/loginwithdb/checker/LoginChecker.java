@@ -18,15 +18,6 @@ public class LoginChecker extends Checker
     private final int length=10;
     private final String pattern="^[a-zA-Z0-9._-]{3,10}$"; //Length >=3 ; Valid characters: a-z, A-Z, 0-9, points, dashes and underscores.
 
-    @Override
-    protected boolean checkIfMatchesThePattern(String email, String pattern) {
-        return super.checkIfMatchesThePattern(email, pattern); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    protected boolean checkIfEmpty(String login) {
-        return super.checkIfEmpty(login); //To change body of generated methods, choose Tools | Templates.
-    }
 
     private boolean checkIfMatchesLength(String login)
     {
@@ -35,14 +26,14 @@ public class LoginChecker extends Checker
 
     private boolean checkIfRepeatedInDB(String login)
     {
-    User user=new LoadDB().getUserObject(login); 
-    System.out.println("asdadada");
-    return !user.getUserLoginData().getLogin().equals(login);   
+        User user=new LoadDB().getUserObject(login); 
+        return !(user instanceof User);
     }
-
+//PROBLEM:POWTORZONY W BAZIE DANYCH
     @Override
     public boolean checker(String login) 
     {
-        return !this.checkIfEmpty(login) && this.checkIfMatchesLength(login) && this.checkIfMatchesThePattern(login, this.pattern) && this.checkIfRepeatedInDB(login);
+        System.out.println("SPRAWDZAM LOGIN: "+!super.checkIfEmpty(login)+" "+this.checkIfMatchesLength(login)+" "+super.checkIfMatchesThePattern(login, this.pattern)+" "+this.checkIfRepeatedInDB(login));
+        return !super.checkIfEmpty(login) && this.checkIfMatchesLength(login) && super.checkIfMatchesThePattern(login, this.pattern) && this.checkIfRepeatedInDB(login);
     }
 }

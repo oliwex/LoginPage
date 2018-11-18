@@ -11,21 +11,8 @@ package com.mycompany.loginwithdb.checker;
  */
 public class SurnameChecker extends Checker{
 
-    private String surnamePattern="[A-Z][a-zA-Z]*"; //First Letter capital, the rest is non capital
-    private int length=20;
-    
-    
-    @Override
-    protected boolean checkIfMatchesThePattern(String email, String pattern) 
-    {
-        return super.checkIfMatchesThePattern(email, pattern); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    protected boolean checkIfEmpty(String value) 
-    {
-        return super.checkIfEmpty(value); //To change body of generated methods, choose Tools | Templates.
-    }
+    private final String pattern="[A-Z][a-zA-Z]*"; //First Letter capital, the rest is non capital
+    private final int length=20;
 
     private boolean checkIfMatchesLength(String name)
     {
@@ -34,7 +21,7 @@ public class SurnameChecker extends Checker{
 
     @Override
     public boolean checker(String value) {
-        return !this.checkIfEmpty(value) && this.checkIfMatchesLength(value) && this.checkIfMatchesThePattern(value, this.surnamePattern);
+        return !super.checkIfEmpty(value) && this.checkIfMatchesLength(value) && super.checkIfMatchesThePattern(value, this.pattern);
     }
     
 }

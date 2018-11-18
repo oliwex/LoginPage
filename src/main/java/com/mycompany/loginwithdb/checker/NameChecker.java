@@ -12,30 +12,17 @@ package com.mycompany.loginwithdb.checker;
 public class NameChecker extends Checker
 {
 
-    private final String namePattern="[A-Z][a-z]*"; //First Letter capital, the rest is non capital
+    private final String pattern="[A-Z][a-z]*"; //First Letter capital, the rest is non capital
     private final int length=10;
     
     private boolean checkIfMatchesLength(String name)
     {
         return name.length() <= this.length;
     }
-    
-    
-    @Override
-    protected boolean checkIfMatchesThePattern(String email, String pattern) {
-        return super.checkIfMatchesThePattern(email, pattern); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    protected boolean checkIfEmpty(String name) {
-        return super.checkIfEmpty(name); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-    
     @Override
     public boolean checker(String name) {
-        return !this.checkIfEmpty(name) && this.checkIfMatchesLength(name) && this.checkIfMatchesThePattern(name, this.namePattern);
+        return !super.checkIfEmpty(name) && this.checkIfMatchesLength(name) && super.checkIfMatchesThePattern(name, this.pattern);
     }
     
 }

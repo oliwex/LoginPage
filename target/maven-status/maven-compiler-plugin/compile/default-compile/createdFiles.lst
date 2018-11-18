@@ -5,6 +5,7 @@ com\mycompany\loginwithdb\checker\SurnameChecker.class
 com\mycompany\loginwithdb\UserPostLoginScreenController.class
 com\mycompany\loginwithdb\LoginScreen.class
 com\mycompany\loginwithdb\database\SaveDB.class
+com\mycompany\loginwithdb\database\UpdateDB.class
 com\mycompany\loginwithdb\checker\LoginChecker.class
 com\mycompany\loginwithdb\database\structure\UserLoginData.class
 com\mycompany\loginwithdb\database\structure\UserPrivateData.class
@@ -13,7 +14,9 @@ com\mycompany\loginwithdb\AdminPostLoginScreenController.class
 com\mycompany\loginwithdb\MainScreen.class
 com\mycompany\loginwithdb\checker\EmailChecker.class
 com\mycompany\loginwithdb\SceneSwitcher.class
+com\mycompany\loginwithdb\tablemodels\UserDTO.class
 com\mycompany\loginwithdb\database\DBOperation.class
+com\mycompany\loginwithdb\database\DeleteDB.class
 com\mycompany\loginwithdb\database\structure\User.class
 com\mycompany\loginwithdb\interfaces\AccountActionInterface.class
 com\mycompany\loginwithdb\checker\NameChecker.class

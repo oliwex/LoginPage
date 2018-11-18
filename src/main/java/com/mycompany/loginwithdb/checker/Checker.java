@@ -14,6 +14,8 @@ import java.util.regex.Pattern;
  */
 public abstract class Checker {
 
+    protected String pattern;
+    
     public abstract boolean checker(String value);
     
     protected boolean checkIfEmpty(String value)
@@ -23,9 +25,9 @@ public abstract class Checker {
 
     
     
-    protected boolean checkIfMatchesThePattern(String email,String pattern) 
+    protected boolean checkIfMatchesThePattern(String element,String pattern) 
     {
-        Matcher matcher = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE).matcher(email);
+        Matcher matcher = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE).matcher(element);
         return matcher.find();
     }
 }

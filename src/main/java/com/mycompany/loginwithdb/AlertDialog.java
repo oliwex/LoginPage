@@ -22,7 +22,9 @@ public class AlertDialog {
         this.contentText=contentText;
     }
     
-    private Alert setAlertDialogAppearance()
+   
+    
+    private Alert setAlertProperties(Alert.AlertType alertType)
     {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error Dialog");
@@ -30,9 +32,9 @@ public class AlertDialog {
         alert.setContentText(this.contentText);
         return alert;  
     }
-    public Optional getAlertDialog() 
+    public Optional getAlertDialog(Alert.AlertType alertType) 
     {
-        Optional<ButtonType> result=this.setAlertDialogAppearance().showAndWait();
+        Optional<ButtonType> result=this.setAlertProperties(alertType).showAndWait();
         return result;
     }
 }
